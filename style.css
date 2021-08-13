@@ -3,14 +3,13 @@ body {
     align-items: center;
     justify-content: center;
     background-color: #333;
-    height: 100vh;
     margin: 0;
 }
 
 main {
     display: flex;
     flex-direction: column;
-    justify-content: center;
+    justify-content: flex-start;
     align-items: center;
 }
 
