@@ -18,10 +18,6 @@ main {
     margin: 2px;
 }
 
-.active {
-    background-color: #666;
-}
-
 .rectangles {
     display: flex;
     flex-wrap: wrap;

@@ -4,6 +4,7 @@ const changeSizeButton = document.querySelector('#change-size');
 clearButton.addEventListener('click', e => {
     Array.from(rectanglesElement.children).forEach(element => {
         element.classList.remove('active');
+        element.style.backgroundColor = '#444';
     });
 });
 changeSizeButton.addEventListener('click', e => {
@@ -36,9 +37,25 @@ function createGridElements() {
         rectangle.style.width = `${gridCellSize}px`;
         rectangle.style.height = `${gridCellSize}px`;
         rectangle.addEventListener('mouseenter', e => {
-            e.target.classList.add('active');
+            if (e.target.classList.contains('active')) {
+                let color = e.target.style.backgroundColor;
+                let colorArray = color.match(/\d+/g);
+                let r = Number.parseInt(colorArray[0]) - 26;
+                let g = Number.parseInt(colorArray[1]) - 26;
+                let b = Number.parseInt(colorArray[2]) - 26;
+                e.target.style.backgroundColor = `rgb(${r},${g},${b})`;
+            } else {
+                e.target.classList.add('active');
+                e.target.style.backgroundColor = randomColor();
+            }
         });
         rectanglesElement.appendChild(rectangle);
     }
 }
 
+function randomColor() {
+    let r = Math.random() * 192 + 64;
+    let g = Math.random() * 192 + 64;
+    let b = Math.random() * 192 + 64;
+    return `rgb(${r},${g},${b})`;
+}
