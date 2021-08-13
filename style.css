@@ -1,0 +1,50 @@
+body {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #333;
+    height: 100vh;
+    margin: 0;
+}
+
+main {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.rect {
+    background-color: #444;
+    margin: 2px;
+}
+
+.active {
+    background-color: #666;
+}
+
+.rectangles {
+    display: flex;
+    flex-wrap: wrap;
+    width: 960px;
+    height: 960px;
+}
+
+button {
+    font-size: larger;
+    font-weight: bolder;
+    background-color: #888;
+    border: solid 4px #f33;
+    border-radius: 10px;
+    margin: 8px 16px;
+}
+
+button:hover {
+    border: solid 4px #a33;
+    cursor: pointer;
+}
+
+.buttons {
+    display: flex;
+    justify-content: space-between;
+}
